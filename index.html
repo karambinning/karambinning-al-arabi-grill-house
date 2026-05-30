@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Al Arabi Grill House — Charcoal-fired Levantine grill · Martineau Place, Birmingham B2</title>
+<meta name="description" content="Al Arabi Grill House — a Levantine charcoal grill in central Birmingham. Shawarma, mashawi, kofta, falafel, mezze. 30 Martineau Place, B2 4UH. Birmingham City Council hygiene rating: Good (Aug 2024).">
+<meta name="theme-color" content="#161311">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#161311;
+    --ink-soft:#2A2520;
+    --paper:#F2E8D5;
+    --paper-deep:#E7D9BC;
+    --ember:#B23B2C;
+    --ember-glow:#D75A37;
+    --brass:#C9924B;
+    --smoke:rgba(22,19,17,.55);
+    --display:"Bricolage Grotesque", "Times New Roman", serif;
+    --body:"Newsreader", Georgia, serif;
+    --rhythm:clamp(1rem, .85rem + .35vw, 1.18rem);
+  }
+
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:var(--rhythm);
+    line-height:1.45;
+    font-optical-sizing:auto;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    pointer-events:none;
+    background:
+      radial-gradient(circle at 20% 0%, rgba(178,59,44,.04), transparent 60%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .09 0 0 0 0 .07 0 0 0 0 .06 0 0 0 .07 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    mix-blend-mode:multiply;
+    opacity:.55;
+    z-index:1;
+  }
+
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:var(--display); text-wrap:balance; letter-spacing:-0.025em; line-height:.92}
+  p{text-wrap:pretty; hyphens:auto}
+  ::selection{background:var(--ember); color:var(--paper)}
+
+  /* ── TOP RIBBON ─────────────────────────────────────────── */
+  .ribbon{
+    position:relative; z-index:5;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:1.1rem clamp(1.2rem, 4vw, 3rem);
+    border-bottom:1px solid rgba(22,19,17,.18);
+    font-family:var(--display);
+    font-weight:500;
+    font-size:.82rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+  }
+  .ribbon__mark{display:flex; align-items:center; gap:.6rem}
+  .ribbon__mark svg{width:1.1rem; height:1.1rem; fill:var(--ember)}
+  .ribbon__crumbs{display:flex; gap:1.4rem; opacity:.7}
+  .ribbon__crumbs span+span{position:relative}
+  .ribbon__crumbs span+span::before{content:"·"; position:absolute; left:-.9rem; opacity:.5}
+  @media(max-width:640px){
+    .ribbon__crumbs{display:none}
+    .ribbon{font-size:.75rem}
+  }
+
+  /* ── HERO MASTHEAD ──────────────────────────────────────── */
+  .hero{
+    position:relative;
+    z-index:2;
+    padding:clamp(2.4rem,7vw,5rem) clamp(1.2rem,4vw,3rem) clamp(2rem,5vw,4rem);
+    overflow:hidden;
+  }
+  .hero__ember{
+    position:absolute;
+    top:-30%; left:-15%; width:130%; height:160%;
+    background:
+      radial-gradient(circle at 30% 40%, rgba(215,90,55,.42), transparent 45%),
+      radial-gradient(circle at 70% 60%, rgba(178,59,44,.28), transparent 50%),
+      radial-gradient(circle at 50% 90%, rgba(201,146,75,.18), transparent 55%);
+    filter:blur(60px);
+    z-index:-1;
+    pointer-events:none;
+  }
+  @supports (animation-timeline: view()){
+    .hero__ember{
+      animation:drift 26s ease-in-out infinite alternate;
+    }
+    @keyframes drift{
+      0%   { transform:translate(0,0) scale(1)   rotate(0deg); }
+      100% { transform:translate(2%,-4%) scale(1.08) rotate(6deg); }
+    }
+  }
+
+  .hero__eyebrow{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:.78rem;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    color:var(--ember);
+    margin-bottom:clamp(1.4rem,3vw,2.2rem);
+    display:flex; align-items:center; gap:.8rem;
+  }
+  .hero__eyebrow::after{
+    content:""; flex:0 0 4rem; height:1px; background:var(--ember); opacity:.6;
+  }
+
+  .hero__title{
+    font-size:clamp(3.2rem, 14.5vw, 13rem);
+    font-weight:800;
+    font-variation-settings:"opsz" 96;
+    color:var(--ink);
+    margin-bottom:clamp(1.2rem,3vw,2rem);
+  }
+  .hero__title em{
+    font-style:normal;
+    color:var(--ember);
+    font-variation-settings:"opsz" 96;
+  }
+  .hero__title .ampersand{
+    font-family:var(--body);
+    font-style:italic;
+    font-weight:400;
+    color:var(--brass);
+  }
+
+  .hero__caption{
+    max-width:38rem;
+    font-size:clamp(1.05rem,1.8vw,1.35rem);
+    line-height:1.55;
+    color:var(--ink-soft);
+  }
+  .hero__caption strong{font-weight:600; color:var(--ink)}
+
+  .hero__meta{
+    margin-top:clamp(2rem,4vw,3rem);
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));
+    gap:1.4rem 2rem;
+    font-family:var(--display);
+    font-size:.84rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+  }
+  .hero__meta dt{
+    color:var(--ember);
+    font-weight:500;
+    margin-bottom:.35rem;
+    font-size:.72rem;
+    letter-spacing:.22em;
+  }
+  .hero__meta dd{font-weight:500; color:var(--ink)}
+
+  /* ── MARQUEE ────────────────────────────────────────────── */
+  .marquee{
+    position:relative; z-index:2;
+    overflow:hidden;
+    background:var(--ink);
+    color:var(--paper);
+    border-top:1px solid var(--ember);
+    border-bottom:1px solid var(--ember);
+    padding:1.25rem 0;
+  }
+  .marquee__track{
+    display:inline-flex;
+    gap:3.5rem;
+    white-space:nowrap;
+    animation:scroll 38s linear infinite;
+    font-family:var(--display);
+    font-weight:800;
+    font-size:clamp(1.4rem,3vw,2.4rem);
+    letter-spacing:-0.01em;
+    text-transform:uppercase;
+  }
+  .marquee__track span{display:inline-flex; align-items:center; gap:3.5rem}
+  .marquee__track span::after{
+    content:""; width:.5rem; height:.5rem; border-radius:50%; background:var(--ember);
+  }
+  @keyframes scroll{to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){
+    .marquee__track{animation-duration:200s}
+    .hero__ember{animation:none}
+  }
+
+  /* ── SLABS / SECTIONS ───────────────────────────────────── */
+  .slab{
+    position:relative; z-index:2;
+    padding:clamp(3.5rem,8vw,7rem) clamp(1.2rem,4vw,3rem);
+  }
+  .slab--paper{background:var(--paper)}
+  .slab--paper-deep{background:var(--paper-deep)}
+  .slab--ink{background:var(--ink); color:var(--paper)}
+  .slab--ink h2, .slab--ink h3{color:var(--paper)}
+
+  .slab__head{
+    display:flex; flex-direction:column; gap:.7rem;
+    margin-bottom:clamp(2.4rem,5vw,4rem);
+    max-width:48rem;
+  }
+  .eyebrow{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:.74rem;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    color:var(--ember);
+    display:flex; align-items:center; gap:.7rem;
+  }
+  .eyebrow::before{
+    content:""; width:1.4rem; height:1px; background:var(--ember);
+  }
+  .slab--ink .eyebrow{color:var(--ember-glow)}
+  .slab--ink .eyebrow::before{background:var(--ember-glow)}
+  .slab__title{
+    font-size:clamp(2.4rem,6vw,5.2rem);
+    font-weight:800;
+    font-variation-settings:"opsz" 60;
+  }
+  .slab__lede{
+    font-size:clamp(1.05rem,1.6vw,1.25rem);
+    max-width:38rem;
+    color:var(--ink-soft);
+    margin-top:.6rem;
+  }
+  .slab--ink .slab__lede{color:rgba(242,232,213,.78)}
+
+  /* ── MENU AS BROADSHEET ─────────────────────────────────── */
+  .menu{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:clamp(2.5rem,5vw,4rem) clamp(3rem,5vw,5rem);
+  }
+  @media(min-width:780px){
+    .menu{grid-template-columns:repeat(2,1fr)}
+  }
+
+  .menu__group h3{
+    font-size:clamp(1.4rem,2.6vw,2rem);
+    font-weight:800;
+    font-variation-settings:"opsz" 36;
+    border-bottom:1px solid rgba(22,19,17,.25);
+    padding-bottom:.7rem;
+    margin-bottom:1.4rem;
+    display:flex; justify-content:space-between; align-items:baseline; gap:1rem;
+  }
+  .menu__group h3 small{
+    font-family:var(--body);
+    font-style:italic;
+    font-weight:400;
+    font-size:.85rem;
+    color:var(--ember);
+    letter-spacing:0;
+    text-transform:none;
+    white-space:nowrap;
+  }
+  .menu__group ul{list-style:none; display:flex; flex-direction:column; gap:1.05rem}
+  .menu__group li{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:.2rem;
+  }
+  .menu__group li strong{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:1.05rem;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+  }
+  .menu__group li span{
+    font-size:.98rem;
+    color:var(--ink-soft);
+    line-height:1.45;
+  }
+
+  @supports (animation-timeline: view()){
+    .reveal{
+      animation:rise both;
+      animation-timeline:view();
+      animation-range:entry 0% cover 28%;
+    }
+    @keyframes rise{
+      from{opacity:0; transform:translateY(1.8rem)}
+      to  {opacity:1; transform:translateY(0)}
+    }
+  }
+
+  /* ── STORY SLAB (dark) ──────────────────────────────────── */
+  .story{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:clamp(2rem,4vw,3.5rem);
+    max-width:62rem;
+  }
+  @media(min-width:760px){
+    .story{grid-template-columns:1.05fr 1fr; gap:5rem}
+  }
+  .story__h{
+    font-size:clamp(2.4rem,5.5vw,4.4rem);
+    font-weight:800;
+    font-variation-settings:"opsz" 60;
+  }
+  .story__h em{
+    font-family:var(--body);
+    font-style:italic;
+    font-weight:400;
+    color:var(--ember-glow);
+  }
+  .story__body{
+    font-size:clamp(1.05rem,1.4vw,1.18rem);
+    line-height:1.7;
+    color:rgba(242,232,213,.82);
+    display:flex; flex-direction:column; gap:1rem;
+  }
+  .story__body p:first-letter{
+    font-family:var(--display);
+    font-weight:800;
+    font-size:3.2rem;
+    float:left;
+    line-height:.9;
+    padding:.3rem .6rem 0 0;
+    color:var(--ember-glow);
+  }
+
+  /* ── LETTERHEAD / FIND US ──────────────────────────────── */
+  .letter{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:clamp(2.5rem,5vw,4rem);
+    align-items:start;
+  }
+  @media(min-width:820px){
+    .letter{grid-template-columns:1.1fr 1fr}
+  }
+  .letter__address{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:clamp(1.4rem,3vw,2.2rem);
+    line-height:1.25;
+    letter-spacing:-0.005em;
+  }
+  .letter__address span{display:block}
+  .letter__address .name{
+    font-weight:800;
+    font-size:clamp(1.8rem,4vw,3rem);
+    color:var(--ember);
+    margin-bottom:.6rem;
+    line-height:1;
+  }
+  .letter__notes{
+    font-size:1rem;
+    color:var(--ink-soft);
+    display:flex; flex-direction:column; gap:1.1rem;
+    border-left:1px solid rgba(22,19,17,.25);
+    padding-left:1.6rem;
+  }
+  .letter__notes dt{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:.72rem;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--ember);
+    margin-bottom:.25rem;
+  }
+  .letter__notes dd{font-size:1.05rem; color:var(--ink)}
+
+  /* ── TRUST STRIP ───────────────────────────────────────── */
+  .trust{
+    background:var(--paper-deep);
+    border-top:1px solid rgba(22,19,17,.18);
+    border-bottom:1px solid rgba(22,19,17,.18);
+    padding:clamp(2rem,4vw,3rem) clamp(1.2rem,4vw,3rem);
+    position:relative; z-index:2;
+  }
+  .trust__row{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:2rem;
+    align-items:center;
+    max-width:62rem;
+    margin:0 auto;
+  }
+  @media(min-width:720px){
+    .trust__row{grid-template-columns:auto 1fr; gap:2.5rem}
+  }
+  .trust__badge{
+    display:inline-flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    width:7.5rem; height:7.5rem;
+    border:2px solid var(--ink);
+    border-radius:50%;
+    background:var(--paper);
+    text-align:center;
+    padding:.6rem;
+    flex-shrink:0;
+  }
+  .trust__badge strong{
+    font-family:var(--display);
+    font-weight:800;
+    font-size:1.75rem;
+    line-height:1;
+    color:var(--ember);
+  }
+  .trust__badge span{
+    font-family:var(--display);
+    font-size:.62rem;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    margin-top:.25rem;
+    color:var(--ink);
+  }
+  .trust__copy{
+    font-size:clamp(1.05rem,1.6vw,1.2rem);
+    line-height:1.55;
+    color:var(--ink);
+  }
+  .trust__copy strong{
+    font-family:var(--display);
+    font-weight:800;
+    letter-spacing:.01em;
+  }
+  .trust__copy small{
+    display:block;
+    margin-top:.5rem;
+    font-size:.78rem;
+    color:var(--ink-soft);
+    font-family:var(--display);
+    letter-spacing:.16em;
+    text-transform:uppercase;
+  }
+
+  /* ── FOOTER ────────────────────────────────────────────── */
+  footer{
+    background:var(--ink);
+    color:var(--paper);
+    padding:clamp(3rem,6vw,5rem) clamp(1.2rem,4vw,3rem) 2rem;
+    position:relative; z-index:2;
+  }
+  .footer__grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:2.5rem;
+    max-width:64rem;
+  }
+  @media(min-width:760px){
+    .footer__grid{grid-template-columns:1.4fr 1fr 1fr}
+  }
+  .footer__mark{
+    font-family:var(--display);
+    font-weight:800;
+    font-size:clamp(2rem,4vw,3rem);
+    line-height:.95;
+    margin-bottom:1rem;
+  }
+  .footer__mark em{font-style:normal; color:var(--ember-glow)}
+  .footer__tag{
+    font-size:.98rem;
+    color:rgba(242,232,213,.7);
+    max-width:22rem;
+  }
+  .footer__col h4{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:.72rem;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--ember-glow);
+    margin-bottom:1rem;
+  }
+  .footer__col ul{list-style:none; display:flex; flex-direction:column; gap:.55rem}
+  .footer__col a{
+    display:inline-block;
+    position:relative;
+    padding-bottom:1px;
+    transition:color .2s ease;
+  }
+  .footer__col a::after{
+    content:"";
+    position:absolute; left:0; right:0; bottom:-1px;
+    height:1px; background:var(--ember-glow);
+    transform:scaleX(0); transform-origin:left;
+    transition:transform .25s ease;
+  }
+  .footer__col a:hover{color:var(--ember-glow)}
+  .footer__col a:hover::after{transform:scaleX(1)}
+
+  .footer__base{
+    margin-top:clamp(3rem,5vw,4rem);
+    padding-top:1.6rem;
+    border-top:1px solid rgba(242,232,213,.16);
+    display:flex; flex-wrap:wrap; justify-content:space-between; gap:1rem;
+    font-family:var(--display);
+    font-size:.72rem;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:rgba(242,232,213,.55);
+  }
+</style>
+</head>
+<body>
+
+<!-- ── RIBBON ─────────────────────────────────────────────── -->
+<div class="ribbon">
+  <div class="ribbon__mark">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 9.5 9.2 2 10l5.6 4.9L5.8 22 12 18.3 18.2 22l-1.8-7.1L22 10l-7.5-.8Z"/></svg>
+    Al Arabi · est. Martineau Place
+  </div>
+  <div class="ribbon__crumbs">
+    <span>Charcoal grill</span>
+    <span>Halal · Levantine</span>
+    <span>Birmingham B2</span>
+  </div>
+</div>
+
+<!-- ── HERO ──────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero__ember" aria-hidden="true"></div>
+
+  <p class="hero__eyebrow">Charcoal-fired · Central Birmingham</p>
+
+  <h1 class="hero__title">
+    Al&nbsp;Arabi<br>
+    <span class="ampersand">&amp;</span> <em>Grill House</em>
+  </h1>
+
+  <p class="hero__caption">
+    A <strong>Levantine grill</strong> tucked into Martineau Place, a minute from
+    New Street. Shawarma turning, kofta on the coals, mezze laid out the way
+    the Eastern Mediterranean has done it for a thousand years.
+  </p>
+
+  <dl class="hero__meta">
+    <div><dt>Find us</dt><dd>30 Martineau Place</dd></div>
+    <div><dt>Postcode</dt><dd>Birmingham B2 4UH</dd></div>
+    <div><dt>Hygiene</dt><dd>Rated Good</dd></div>
+    <div><dt>Kitchen</dt><dd>Halal · Levantine</dd></div>
+  </dl>
+</section>
+
+<!-- ── MARQUEE ───────────────────────────────────────────── -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Charcoal grilled</span>
+    <span>Lamb shawarma</span>
+    <span>Mixed mashawi</span>
+    <span>Falafel · fresh</span>
+    <span>Mezze · sumac</span>
+    <span>Khubz from the oven</span>
+    <span>Tabbouleh</span>
+    <span>Halal</span>
+    <span>Charcoal grilled</span>
+    <span>Lamb shawarma</span>
+    <span>Mixed mashawi</span>
+    <span>Falafel · fresh</span>
+    <span>Mezze · sumac</span>
+    <span>Khubz from the oven</span>
+    <span>Tabbouleh</span>
+    <span>Halal</span>
+  </div>
+</div>
+
+<!-- ── MENU AS BROADSHEET ────────────────────────────────── -->
+<section class="slab slab--paper" id="menu">
+  <div class="slab__head">
+    <p class="eyebrow">From the grill</p>
+    <h2 class="slab__title">Set out the way<br>the table asks for it.</h2>
+    <p class="slab__lede">
+      The kitchen runs Levantine. Cuts of lamb and chicken come off the
+      coals, breads come out of the oven, mezze comes cold from the
+      counter. Order across the table — that's how it's meant to land.
+    </p>
+  </div>
+
+  <div class="menu">
+    <div class="menu__group reveal">
+      <h3>Shawarma <small>off the spit</small></h3>
+      <ul>
+        <li><strong>Lamb shawarma</strong><span>Marinated overnight, shaved as it turns. Wrapped or laid over rice.</span></li>
+        <li><strong>Chicken shawarma</strong><span>Garlic, lemon, white sauce. The Birmingham lunch staple, done right.</span></li>
+        <li><strong>Mixed shawarma plate</strong><span>Both meats, rice, salad, pickles, khubz on the side.</span></li>
+      </ul>
+    </div>
+
+    <div class="menu__group reveal">
+      <h3>Mashawi <small>over coals</small></h3>
+      <ul>
+        <li><strong>Lamb kofta</strong><span>Hand-minced lamb, parsley, onion, baharat. Skewered, charred.</span></li>
+        <li><strong>Shish taouk</strong><span>Yoghurt-marinated chicken cubes, garlic, citrus.</span></li>
+        <li><strong>Mixed grill</strong><span>Kofta, shish taouk, lamb cubes, vegetables. The full coals.</span></li>
+      </ul>
+    </div>
+
+    <div class="menu__group reveal">
+      <h3>Mezze <small>from the counter</small></h3>
+      <ul>
+        <li><strong>Hummus &amp; tahini</strong><span>Chickpea, lemon, sesame, olive oil pooled in the middle.</span></li>
+        <li><strong>Baba ganoush</strong><span>Smoked aubergine, garlic, tahini. Charred at the edges.</span></li>
+        <li><strong>Tabbouleh &amp; fattoush</strong><span>Parsley-led, lemon-bright, crisped khubz folded through.</span></li>
+        <li><strong>Falafel</strong><span>Chickpea, herbs, cumin, fried to order.</span></li>
+      </ul>
+    </div>
+
+    <div class="menu__group reveal">
+      <h3>Sides &amp; bread <small>warm</small></h3>
+      <ul>
+        <li><strong>Khubz</strong><span>Flatbread from the oven. Order one for the table.</span></li>
+        <li><strong>Saffron rice</strong><span>Long-grain, gold, fluffed at service.</span></li>
+        <li><strong>Pickles &amp; chilli</strong><span>Turnip, cucumber, green chilli — the brightness the coals need.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── STORY SLAB ────────────────────────────────────────── -->
+<section class="slab slab--ink">
+  <div class="story reveal">
+    <div>
+      <p class="eyebrow">The kitchen</p>
+      <h2 class="story__h">Charcoal first.<br><em>Everything else after.</em></h2>
+    </div>
+    <div class="story__body">
+      <p>The Levantine grill is older than the city it sits in. Wood-coal,
+      hand-cut meat, breads pulled from a hot stone, mezze laid out cold and
+      bright. Al Arabi runs that kitchen, plainly. The shawarma turns on the
+      spit by the door. The kofta hits the coals to order. Nothing arrives
+      that wasn't just made.</p>
+
+      <p>Martineau Place puts us a minute from New Street — between the
+      bus stops, the shops, and the office blocks that get hungry at one.
+      Walk in. Take a seat or take it away. The table runs Levantine —
+      lamb and chicken from the grill, mezze in the middle, bread for
+      whoever reaches.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── HYGIENE / TRUST STRIP ─────────────────────────────── -->
+<aside class="trust" aria-label="Food hygiene rating">
+  <div class="trust__row">
+    <div class="trust__badge" aria-hidden="true">
+      <strong>Good</strong>
+      <span>Hygiene</span>
+    </div>
+    <p class="trust__copy">
+      <strong>Hygiene rating: Good</strong> across hygienic handling,
+      cleanliness of the kitchen, and management of food safety.
+      <small>Birmingham City Council · Inspected August 2024 · Food Standards Agency</small>
+    </p>
+  </div>
+</aside>
+
+<!-- ── FIND US / LETTERHEAD ──────────────────────────────── -->
+<section class="slab slab--paper-deep" id="find-us">
+  <div class="slab__head">
+    <p class="eyebrow">Find us</p>
+    <h2 class="slab__title">Martineau Place,<br>the Birmingham one.</h2>
+    <p class="slab__lede">
+      A minute from New Street Station. Between the Bullring and the
+      Cathedral. Walk-ins through the day.
+    </p>
+  </div>
+
+  <div class="letter reveal">
+    <address class="letter__address">
+      <span class="name">Al Arabi Grill House</span>
+      <span>30 Martineau Place</span>
+      <span>Birmingham</span>
+      <span>B2 4UH</span>
+    </address>
+
+    <dl class="letter__notes">
+      <div>
+        <dt>Nearest station</dt>
+        <dd>Birmingham New Street · 4&nbsp;min walk</dd>
+      </div>
+      <div>
+        <dt>Look for</dt>
+        <dd>The shawarma spit by the door, on the Martineau Place row.</dd>
+      </div>
+      <div>
+        <dt>Kitchen style</dt>
+        <dd>Halal · Levantine grill · Mezze counter</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ── FOOTER ────────────────────────────────────────────── -->
+<footer>
+  <div class="footer__grid">
+    <div>
+      <p class="footer__mark">Al&nbsp;Arabi <em>Grill House</em></p>
+      <p class="footer__tag">A Levantine charcoal grill in central
+      Birmingham. Shawarma, mashawi, mezze — set out the way the
+      table asks for it.</p>
+    </div>
+
+    <div class="footer__col">
+      <h4>The shop</h4>
+      <ul>
+        <li>30 Martineau Place</li>
+        <li>Birmingham, B2 4UH</li>
+        <li>Hygiene rating: Good</li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Find us online</h4>
+      <ul>
+        <li><a href="https://www.facebook.com/alarabigrillhouse/" target="_blank" rel="noopener noreferrer">Facebook · alarabigrillhouse</a></li>
+        <li><a href="https://www.instagram.com/alarabigrillhouse/" target="_blank" rel="noopener noreferrer">Instagram · @alarabigrillhouse</a></li>
+        <li><a href="https://ratings.food.gov.uk/business/1634724/al-arabi-grill-house" target="_blank" rel="noopener noreferrer">FSA hygiene rating</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer__base">
+    <span>© Al Arabi Grill House · Birmingham</span>
+    <span>Built carefully · Set Bricolage &amp; Newsreader</span>
+  </div>
+</footer>
+
+</body>
+</html>
